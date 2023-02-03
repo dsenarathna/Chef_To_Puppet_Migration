@@ -1,0 +1,9 @@
+server {
+        listen 8443;
+        server_name nginx_status;
+
+        location / {
+          stub_status on;
+          access_log off;
+        }
+}

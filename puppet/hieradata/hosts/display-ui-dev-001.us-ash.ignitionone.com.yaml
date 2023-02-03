@@ -1,0 +1,17 @@
+displayui_config: 
+  user: 'netmining'
+  install_node: '6.11.4' 
+  path: '/opt/display-management'
+  source: 'ssh://git@stash.ignitionone.com:7999/ui/display-management.git'
+  branch: 'develop'
+  git_tag: 'IONEREL-2961'
+  owner: 'netmining'
+  group: 'netmining'
+  mode: '775'
+  node_env: 'DEV'
+  lang: 'en_US.UTF-8'
+  aws_access_key_id: 'AKIAIQFCW7J3OPM5SQUA'
+  aws_secret_access_key: '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' 
+
+
+

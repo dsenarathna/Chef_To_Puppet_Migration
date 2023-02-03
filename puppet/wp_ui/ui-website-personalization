@@ -1,0 +1,45 @@
+upstream ui-website-personalization {
+  server localhost:18370;
+}
+
+server {
+  listen 8370;
+  server_name ui-website-personalization;
+
+  keepalive_timeout 10;
+
+  large_client_header_buffers 8 32k;
+  client_max_body_size 100M;
+
+  proxy_buffer_size 128k;
+  proxy_buffers 4 256k;
+  proxy_busy_buffers_size 256k;
+  proxy_read_timeout 300s;
+
+  if ($http_x_forwarded_proto = "http") {
+    rewrite ^(.*)$ https://$host$1 permanent;
+  }
+
+  location ~* ^/(css/|img/|js/|locales/|resources/|statics/) {
+    root /opt/website-personalization/dist;
+    access_log off;
+    sendfile off;
+  }
+
+  location / {
+
+    proxy_http_version 1.1;
+    proxy_pass http://ui-website-personalization;
+    proxy_redirect off;
+    proxy_set_header Connection "";
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-NginX-Proxy true;
+    proxy_set_header X-Real-IP $remote_addr;
+
+    access_log off;
+  }
+
+  error_log /var/log/nginx/ui-website-personalization-error.log error;
+}
+

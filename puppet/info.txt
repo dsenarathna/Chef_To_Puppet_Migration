@@ -1,0 +1,12 @@
+http://svn.nl-ams.ignitionone.com/svn/systems/_LINUX_/etc/puppet/modules/wp_ui/manifests/init.pp
+http://svn.nl-ams.ignitionone.com/svn/systems/_LINUX_/etc/puppet/modules/wp_ui_git/manifests/init.pp
+http://svn.nl-ams.ignitionone.com/svn/systems/_LINUX_/etc/puppet/modules/wp_ui_nvm/manifests/init.pp
+http://svn.nl-ams.ignitionone.com/svn/systems/_LINUX_/etc/puppet/hieradata/hosts/wp-ui-test.us-ash.ignitionone.com.yaml
+http://svn.nl-ams.ignitionone.com/svn/systems/_LINUX_/etc/supervisor/conf.d/wp-ui.conf
+http://svn.nl-ams.ignitionone.com/svn/systems/_LINUX_/etc/puppet/manifests/roles.pp
+http://svn.nl-ams.ignitionone.com/svn/systems/_LINUX_/etc/wp_ui/known_hosts
+
+
+Supervisor: A Process Control System
+http://supervisord.org/
+

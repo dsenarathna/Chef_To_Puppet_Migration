@@ -1,0 +1,7 @@
+#!/bin/dash
+
+exec 2>&1
+
+cd /opt/ione/nodejs/display-management/
+
+exec /usr/bin/chpst -u netmining:netmining  /usr/local/bin/node ./src/server/app.js
