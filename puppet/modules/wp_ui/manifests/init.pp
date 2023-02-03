@@ -43,14 +43,14 @@ class wp_ui {
 	   group  => 'netmining',
 	   mode   => '0600',
 	   notify  => [Service['ssh'],Exec['npm i']],
-	   content => template("${::puppet_dir_master}/systems/_LINUX_/etc/display_ui/my-new-ssh-key");
+	   content => lookup('secret_key').my-new-ssh-key::secret");
 	   
 	   '/home/netmining/.ssh/my-new-ssh-key.pub':
 	   owner  => 'netmining',
 	   group  => 'netmining',
 	   mode   => '0644',
 	   notify  => [Service['ssh'],Exec['npm i']],
-	   content => template("${::puppet_dir_master}/systems/_LINUX_/etc/display_ui/my-new-ssh-key.pub");
+	   content => lookup('secret_key').my-new-ssh-key.pub::secret");
 
 
         '/usr/local/bin/node':
